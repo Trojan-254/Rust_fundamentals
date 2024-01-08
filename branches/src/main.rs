@@ -3,11 +3,10 @@ use std::io;
 // If expressions
 
 fn main() {
-    loop {
-
-        println!("Please enter your input");
-        println!(" ");
-        let mut number = String::new();
+    
+    println!("Please enter your input");
+    println!(" ");
+    let mut number = String::new();
 
     io::stdin()
         .read_line(  &mut number)
@@ -28,9 +27,30 @@ fn main() {
             }
         }
         Err(_) => {
-            println!("Invalid input, please input a valid integer")
+            println!("Invalid input, please input a valid integer");
+            
         }
     }
 
-    }
+    // Using if in a let statement
+    let condition = true;
+
+    let new_number = if condition { 5 } else { 6 };
+
+    println!("The value on number is: {new_number}");
+
+
+    // Returning values from loops
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10{
+            break counter * 2;
+        }
+    };
+
+    println!("The result is: {result}");
+    
 }
